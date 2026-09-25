@@ -15,6 +15,7 @@ import pvpMallImg from './assets/pvp mall.jpeg';
 import e3diImg from './assets/e3di.jpeg';
 import benzCircleImg from './assets/benz center.jpeg';
 import ScreensPage from './ScreensPage';
+import PricingPage from './PricingPage';
 
 function App() {
   const dummyImages = [
@@ -97,6 +98,10 @@ function App() {
     return <ScreensPage activeLink={activeLink} setActiveLink={setActiveLink} />;
   }
 
+  if (activeLink === 'pricing') {
+    return <PricingPage activeLink={activeLink} setActiveLink={setActiveLink} />;
+  }
+
   return (
     <div className="page-wrapper">
       {/* --- HERO SECTION --- */}
@@ -161,7 +166,7 @@ function App() {
             </div>
 
             <div className="hero-right">
-              <div className="right-text" style={{ textAlign: 'right', letterSpacing: '4px', fontSize: '0.8rem', fontWeight: 600 }}>
+              <div className="right-text" style={{ textAlign: 'right', letterSpacing: '4px', fontSize: '0.8rem', fontWeight: 600, transform: 'translateY(-3rem)' }}>
                 PEOPLE<br />PLACES<br />POSSIBILITIES
               </div>
             </div>
@@ -196,10 +201,10 @@ function App() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /></svg>
               ABOUT E3DI
             </div>
-            <h2 className="section-title" style={{ fontSize: '2.8rem', fontWeight: 800, lineHeight: 1.15, color: '#0f172a', marginBottom: '1.5rem', letterSpacing: '-1px' }}>
-              Digital advertising,<br />built for the real world.
+            <h2 className="section-title" style={{ fontSize: '3.8rem', fontWeight: 800, lineHeight: 1.15, color: '#0f172a', marginBottom: '1.5rem', letterSpacing: '-1.5px' }}>
+              Digital advertising, built for the real world.
             </h2>
-            <p className="section-desc" style={{ fontSize: '1.2rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem' }}>
+            <p className="section-desc" style={{ fontSize: '1.3rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', maxWidth: '100%' }}>
               E3DI connects brands with premium digital screens across high-visibility locations in Vijayawada, helping you reach people where they live, move and engage.
             </p>
             <a href="#" className="btn-dark" style={{ textDecoration: 'none' }}>
@@ -516,13 +521,13 @@ function App() {
         </div>
 
         <div className="container" style={{ maxWidth: '95%', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '3rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', gap: '8rem', marginBottom: '4rem' }}>
             {/* Left Column */}
             <div style={{ flex: '0 0 250px', display: 'flex', flexDirection: 'column' }}>
               <a href="/" style={{ display: 'inline-block', marginBottom: '1rem' }}>
-                <img src={logoImg} alt="E3Di Logo" style={{ height: '40px', objectFit: 'contain', objectPosition: 'left center', cursor: 'pointer' }} />
+                <img src={logoImg} alt="E3Di Logo" style={{ height: '65px', objectFit: 'contain', objectPosition: 'left center', cursor: 'pointer' }} />
               </a>
-              <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '2rem' }}>
+              <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '1rem' }}>
                 Vijayawada's digital screen network<br />for a brighter tomorrow.
               </p>
               <div style={{ display: 'flex', gap: '1rem', color: '#334155', marginBottom: 'auto' }}>
@@ -534,30 +539,30 @@ function App() {
             </div>
 
             {/* Links Columns Container */}
-            <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', gap: '2rem' }}>
+            <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start', gap: '6rem' }}>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', marginLeft: '4rem' }}>
                 <h4 style={{ margin: '0 0 0.5rem 0', color: '#0f172a', fontSize: '0.95rem', fontWeight: 800 }}>Company</h4>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>About Us</a>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>Contact Us</a>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>Careers</a>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', marginLeft: '3rem' }}>
                 <h4 style={{ margin: '0 0 0.5rem 0', color: '#0f172a', fontSize: '0.95rem', fontWeight: 800 }}>Campaigns</h4>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>Book a Campaign</a>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>View Pricing</a>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>Partner With Us</a>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', marginLeft: '4rem' }}>
                 <h4 style={{ margin: '0 0 0.5rem 0', color: '#0f172a', fontSize: '0.95rem', fontWeight: 800 }}>Resources</h4>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>Help Center</a>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>Terms of Service</a>
                 <a href="#" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500 }}>Privacy Policy</a>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', minWidth: '240px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', minWidth: '240px', marginLeft: '6rem' }}>
                 <h4 style={{ margin: '0 0 1rem 0', color: '#0f172a', fontSize: '0.95rem', fontWeight: 800 }}>Stay In Touch</h4>
                 <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #e2e8f0', borderRadius: '30px', padding: '0.4rem 0.6rem 0.4rem 1.2rem', marginBottom: '1.5rem', backgroundColor: '#fff' }}>
                   <input type="email" placeholder="Enter your email" style={{ border: 'none', outline: 'none', flex: 1, fontSize: '0.85rem', color: '#64748b', minWidth: '0' }} />

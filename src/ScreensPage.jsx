@@ -72,15 +72,14 @@ export default function ScreensPage({ activeLink, setActiveLink }) {
           <a href="/" onClick={(e) => { e.preventDefault(); setActiveLink('home'); }} style={{ display: 'inline-block' }}>
             <img src={logoImg} alt="E3Di Logo" style={{ height: '35px', objectFit: 'contain' }} />
           </a>
-          <span style={{ fontSize: '0.65rem', fontWeight: 600, marginTop: '0.2rem' }}>City Screens. Real Impact.</span>
         </div>
 
         <nav style={{ display: 'flex', gap: '2.5rem' }}>
           <a href="/" onClick={(e) => { e.preventDefault(); setActiveLink('home'); }} style={{ fontSize: '0.9rem', fontWeight: 500, color: '#64748b', textDecoration: 'none' }}>Home</a>
-          <a href="#screens" style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0f172a', textDecoration: 'none', borderBottom: '2px solid #0f172a', paddingBottom: '4px' }}>Screens</a>
-          <a href="#pricing" style={{ fontSize: '0.9rem', fontWeight: 500, color: '#64748b', textDecoration: 'none' }}>Pricing</a>
-          <a href="#partners" style={{ fontSize: '0.9rem', fontWeight: 500, color: '#64748b', textDecoration: 'none' }}>Partners With Us</a>
-          <a href="#contact" style={{ fontSize: '0.9rem', fontWeight: 500, color: '#64748b', textDecoration: 'none' }}>Contact</a>
+          <a href="#screens" onClick={(e) => { e.preventDefault(); setActiveLink('screens'); }} style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0f172a', textDecoration: 'none', borderBottom: '2px solid #0f172a', paddingBottom: '4px' }}>Screens</a>
+          <a href="#pricing" onClick={(e) => { e.preventDefault(); setActiveLink('pricing'); }} style={{ fontSize: '0.9rem', fontWeight: 500, color: '#64748b', textDecoration: 'none' }}>Pricing</a>
+          <a href="#partners" onClick={(e) => { e.preventDefault(); setActiveLink('partners'); }} style={{ fontSize: '0.9rem', fontWeight: 500, color: '#64748b', textDecoration: 'none' }}>Partners With Us</a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); setActiveLink('contact'); }} style={{ fontSize: '0.9rem', fontWeight: 500, color: '#64748b', textDecoration: 'none' }}>Contact</a>
         </nav>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -108,23 +107,6 @@ export default function ScreensPage({ activeLink, setActiveLink }) {
             <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
               Strategically placed at the city's most high-traffic areas to give your brand maximum visibility and real impact.
             </p>
-          </div>
-
-          <div style={{ display: 'flex', gap: '3rem', backgroundColor: '#f1f5f9', padding: '2rem 3rem', borderRadius: '16px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a' }}>4</span>
-              <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 500 }}>Prime Screens</span>
-            </div>
-            <div style={{ width: '1px', backgroundColor: '#cbd5e1' }}></div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a' }}>2M+</span>
-              <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 500 }}>Daily Reach</span>
-            </div>
-            <div style={{ width: '1px', backgroundColor: '#cbd5e1' }}></div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <span style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a' }}>100%</span>
-              <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 500 }}>City Coverage</span>
-            </div>
           </div>
         </div>
 
@@ -154,37 +136,37 @@ export default function ScreensPage({ activeLink, setActiveLink }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', marginBottom: '4rem' }}>
           {screens.filter(screen => activeFilter === 'All Locations' || screen.type === activeFilter || screen.type + 's' === activeFilter).map((screen, idx) => (
             <div key={idx} style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ position: 'relative', height: '220px' }}>
+              <div style={{ position: 'relative', height: '170px' }}>
                 <img src={screen.img} alt={screen.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
 
                 {/* Overlay Tags */}
-                <div style={{ position: 'absolute', top: '1rem', left: '1rem', backgroundColor: '#fff', padding: '0.3rem 0.8rem', borderRadius: '30px', fontSize: '0.75rem', fontWeight: 700, color: '#0f172a', display: 'flex', alignItems: 'center', gap: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                <div style={{ position: 'absolute', top: '1rem', left: '1rem', backgroundColor: '#fff', padding: '0.4rem 0.8rem', borderRadius: '30px', fontSize: '0.75rem', fontWeight: 600, color: '#0f172a', display: 'flex', alignItems: 'center', gap: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2" /></svg>
                   {screen.type}
                 </div>
 
-                <button style={{ position: 'absolute', top: '1rem', right: '1rem', width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', color: '#fff', cursor: 'pointer', backdropFilter: 'blur(4px)' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg>
+                <button style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.5))' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg>
                 </button>
               </div>
 
-              <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+              <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 800, color: '#0f172a' }}>{screen.name}</h3>
-                <p style={{ margin: '0 0 1.5rem 0', fontSize: '0.85rem', color: '#64748b', lineHeight: 1.5 }}>{screen.desc}</p>
+                <p style={{ margin: '0 0 auto 0', fontSize: '0.85rem', color: '#64748b', lineHeight: 1.5 }}>{screen.desc}</p>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #f1f5f9' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', color: '#475569', fontWeight: 600 }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', marginTop: '1.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
                     {screen.size}
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', color: '#475569', fontWeight: 600 }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                     {screen.reach} Daily Reach
                   </div>
                 </div>
 
-                <button onClick={() => handleViewMap(screen.name)} style={{ width: '100%', padding: '0.8rem', backgroundColor: '#fff', border: '1px solid #e2e8f0', borderRadius: '8px', color: '#0f172a', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', marginTop: 'auto' }}>
-                  Locate on Map <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                <button className="view-details-btn" onClick={() => handleViewMap(screen.name)} style={{ width: '100%', padding: '0.75rem', border: '1px solid #e2e8f0', borderRadius: '8px', color: '#0f172a', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
+                  View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </button>
               </div>
             </div>
@@ -203,7 +185,7 @@ export default function ScreensPage({ activeLink, setActiveLink }) {
           </div>
           <div style={{ flex: 1, position: 'relative', minHeight: '400px', overflow: 'hidden' }}>
             <iframe
-              src="https://maps.google.com/maps?q=Vijayawada&t=&z=12&ie=UTF8&iwloc=&output=embed"
+              src={`https://maps.google.com/maps?q=${activeMapLocation ? (activeMapLocation === 'E3Di' ? 'E3+Food+Court+Vijayawada' : activeMapLocation.replace(' ', '+') + '+Vijayawada') : 'Vijayawada'}&t=&z=${activeMapLocation ? 15 : 12}&ie=UTF8&iwloc=&output=embed`}
               style={{ position: 'absolute', top: '-65px', left: 0, width: 'calc(100% + 65px)', height: 'calc(100% + 65px)', border: 0, pointerEvents: 'none' }}
               allowFullScreen=""
               loading="lazy"
@@ -211,45 +193,24 @@ export default function ScreensPage({ activeLink, setActiveLink }) {
               title="Vijayawada Map"
             ></iframe>
 
-            {/* Custom Screen Pins Overlay */}
-            <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 10 }}>
-
-              {/* MG Road */}
-              <div style={{ position: 'absolute', top: '48%', left: '38%', display: 'flex', flexDirection: 'column', alignItems: 'center', ...getPinStyle('MG Road') }}>
-                <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid #ef4444', overflow: 'hidden', backgroundColor: '#fff', boxShadow: '0 6px 12px rgba(239, 68, 68, 0.4)' }}>
-                  <img src={mgRoadImg} alt="MG Road" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            {/* Dynamic Centered Pin for Selected Location */}
+            <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 10, transition: 'opacity 0.4s ease', opacity: activeMapLocation ? 1 : 0 }}>
+              <div style={{ position: 'absolute', top: '50%', left: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'translate(-50%, -100%) scale(1.2)', filter: 'drop-shadow(0 10px 15px rgba(239, 68, 68, 0.5))' }}>
+                <div style={{ width: 60, height: 60, borderRadius: '50%', border: '3px solid #ef4444', overflow: 'hidden', backgroundColor: '#fff', boxShadow: '0 6px 12px rgba(239, 68, 68, 0.4)' }}>
+                  <img 
+                    src={
+                      activeMapLocation === 'MG Road' ? mgRoadImg : 
+                      activeMapLocation === 'Benz Circle' ? benzCircleImg : 
+                      activeMapLocation === 'Eluru Road' ? eluruRoadImg : 
+                      activeMapLocation === 'E3Di' ? e3diImg : ''
+                    } 
+                    alt={activeMapLocation || 'Location'} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  />
                 </div>
-                <div style={{ width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '8px solid #ef4444', marginTop: '-2px' }}></div>
-                <div style={{ fontWeight: 800, fontSize: '0.75rem', color: '#0f172a', background: '#fff', padding: '0.25rem 0.6rem', borderRadius: '6px', marginTop: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', border: '1px solid #e2e8f0' }}>MG Road</div>
+                <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderTop: '10px solid #ef4444', marginTop: '-2px' }}></div>
+                <div style={{ fontWeight: 800, fontSize: '0.85rem', color: '#0f172a', background: '#fff', padding: '0.3rem 0.8rem', borderRadius: '6px', marginTop: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', border: '1px solid #e2e8f0' }}>{activeMapLocation}</div>
               </div>
-
-              {/* Benz Circle */}
-              <div style={{ position: 'absolute', top: '55%', left: '55%', display: 'flex', flexDirection: 'column', alignItems: 'center', ...getPinStyle('Benz Circle') }}>
-                <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid #ef4444', overflow: 'hidden', backgroundColor: '#fff', boxShadow: '0 6px 12px rgba(239, 68, 68, 0.4)' }}>
-                  <img src={benzCircleImg} alt="Benz Circle" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '8px solid #ef4444', marginTop: '-2px' }}></div>
-                <div style={{ fontWeight: 800, fontSize: '0.75rem', color: '#0f172a', background: '#fff', padding: '0.25rem 0.6rem', borderRadius: '6px', marginTop: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', border: '1px solid #e2e8f0' }}>Benz Circle</div>
-              </div>
-
-              {/* Eluru Road */}
-              <div style={{ position: 'absolute', top: '40%', left: '48%', display: 'flex', flexDirection: 'column', alignItems: 'center', ...getPinStyle('Eluru Road') }}>
-                <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid #ef4444', overflow: 'hidden', backgroundColor: '#fff', boxShadow: '0 6px 12px rgba(239, 68, 68, 0.4)' }}>
-                  <img src={eluruRoadImg} alt="Eluru Road" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '8px solid #ef4444', marginTop: '-2px' }}></div>
-                <div style={{ fontWeight: 800, fontSize: '0.75rem', color: '#0f172a', background: '#fff', padding: '0.25rem 0.6rem', borderRadius: '6px', marginTop: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', border: '1px solid #e2e8f0' }}>Eluru Road</div>
-              </div>
-
-              {/* E3Di */}
-              <div style={{ position: 'absolute', top: '58%', left: '72%', display: 'flex', flexDirection: 'column', alignItems: 'center', ...getPinStyle('E3Di') }}>
-                <div style={{ width: 50, height: 50, borderRadius: '50%', border: '3px solid #ef4444', overflow: 'hidden', backgroundColor: '#fff', boxShadow: '0 6px 12px rgba(239, 68, 68, 0.4)' }}>
-                  <img src={e3diImg} alt="E3Di" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '8px solid #ef4444', marginTop: '-2px' }}></div>
-                <div style={{ fontWeight: 800, fontSize: '0.75rem', color: '#0f172a', background: '#fff', padding: '0.25rem 0.6rem', borderRadius: '6px', marginTop: '0.4rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', border: '1px solid #e2e8f0' }}>E3Di</div>
-              </div>
-
             </div>
           </div>
         </div>
